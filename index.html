@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treats by Seteisha — Handcrafted Cookie Boxes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #E8547A;
+  --dark-pink: #C43A60;
+  --cream: #FDF5EC;
+  --brown: #3B1E08;
+  --gold: #D4A843;
+  --light-pink: #FBEAF0;
+  --muted: #9A7060;
+  --text: #2A1205;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(212,168,67,.11) 1px,transparent 1px),radial-gradient(circle,rgba(232,84,122,.07) 1px,transparent 1px);background-size:40px 40px,67px 67px;background-position:0 0,20px 20px;pointer-events:none;z-index:0;}
+
+/* ANN BAR */
+.ann{background:var(--brown);color:#fff;text-align:center;padding:11px 20px;font-size:13px;position:relative;z-index:200;}
+.ann strong{color:var(--gold);}
+.ann-dot{display:inline-block;width:7px;height:7px;background:var(--pink);border-radius:50%;margin-right:8px;vertical-align:middle;animation:pulse 1.6s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(253,245,236,.96);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:15px 48px;border-bottom:1px solid rgba(59,30,8,.07);}
+.logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;color:var(--brown);text-decoration:none;}
+.logo span{color:var(--pink);}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+.nav-links a{text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--pink);}
+.nav-pill{background:var(--pink)!important;color:#fff!important;padding:9px 22px;border-radius:100px;font-weight:600!important;transition:background .2s,transform .15s!important;}
+.nav-pill:hover{background:var(--dark-pink)!important;transform:translateY(-1px);}
+
+/* HERO */
+.hero{position:relative;min-height:88vh;display:flex;align-items:center;padding:80px 48px;overflow:hidden;z-index:1;}
+.hero-content{max-width:580px;}
+.hero-tag{display:inline-block;background:var(--light-pink);color:var(--pink);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:24px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(50px,7vw,86px);line-height:1;font-weight:900;margin-bottom:22px;color:var(--brown);}
+.hero h1 em{font-style:italic;color:var(--pink);}
+.hero p{font-size:17px;line-height:1.75;color:var(--muted);margin-bottom:38px;max-width:460px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-visual{position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:min(500px,46vw);height:min(500px,46vw);}
+.hero-circle{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,var(--light-pink),#F2BCCF);position:relative;overflow:hidden;}
+.hce{position:absolute;animation:floatY 3s ease-in-out infinite;font-size:76px;}
+.hce:nth-child(1){top:18%;left:22%;animation-delay:0s;}
+.hce:nth-child(2){top:50%;left:52%;animation-delay:.9s;font-size:58px;}
+.hce:nth-child(3){top:68%;left:18%;animation-delay:1.8s;font-size:46px;}
+@keyframes floatY{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-18px) rotate(4deg)}}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:'DM Sans',sans-serif;font-weight:600;cursor:pointer;text-decoration:none;border:none;transition:all .2s ease;white-space:nowrap;}
+.btn-primary{background:var(--pink);color:#fff;padding:15px 34px;border-radius:100px;font-size:15px;}
+.btn-primary:hover{background:var(--dark-pink);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,84,122,.28);}
+.btn-outline{background:transparent;color:var(--brown);padding:14px 32px;border-radius:100px;font-size:15px;border:2px solid var(--brown);}
+.btn-outline:hover{background:var(--brown);color:#fff;}
+.btn-checkout{background:var(--pink);color:#fff;width:100%;padding:18px;border-radius:16px;font-size:17px;margin-top:20px;}
+.btn-checkout:hover{background:var(--dark-pink);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,84,122,.3);}
+.btn-checkout:disabled{background:rgba(59,30,8,.12);color:rgba(59,30,8,.35);transform:none;box-shadow:none;cursor:not-allowed;}
+.btn-wa{background:#25D366;color:#fff;width:100%;padding:15px;border-radius:14px;font-size:15px;display:flex;align-items:center;justify-content:center;gap:9px;}
+.btn-wa:hover{background:#1db954;transform:translateY(-1px);box-shadow:0 6px 20px rgba(37,211,102,.26);}
+.btn-wipay{display:block;background:var(--pink);color:#fff;width:100%;padding:15px;border-radius:14px;font-size:15px;text-align:center;text-decoration:none;font-weight:600;transition:all .2s;}
+.btn-wipay:hover{background:var(--dark-pink);transform:translateY(-1px);}
+.btn-modal{background:var(--pink);color:#fff;border:none;border-radius:100px;padding:14px 36px;font-size:16px;font-weight:600;cursor:pointer;transition:background .2s;font-family:'DM Sans',sans-serif;}
+.btn-modal:hover{background:var(--dark-pink);}
+
+/* qty buttons */
+.qty-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--pink);background:#fff;color:var(--pink);font-size:18px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:all .15s;line-height:1;font-family:'DM Sans',sans-serif;flex-shrink:0;}
+.qty-btn:hover:not(:disabled){background:var(--pink);color:#fff;}
+.qty-btn:disabled{opacity:.28;cursor:not-allowed;}
+.qty-num{font-weight:700;font-size:16px;color:var(--brown);min-width:22px;text-align:center;display:inline-block;}
+
+/* DIVIDER */
+.divider{display:flex;align-items:center;gap:14px;padding:0 48px;max-width:1200px;margin:0 auto;}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(59,30,8,.13),transparent);}
+.divider span{font-size:18px;}
+
+section{position:relative;z-index:1;}
+
+/* ABOUT */
+.about-inner{padding:96px 48px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1200px;margin:0 auto;}
+.sec-tag{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:var(--pink);margin-bottom:14px;display:block;}
+.about-inner h2{font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,48px);line-height:1.15;margin-bottom:20px;color:var(--brown);}
+.about-inner p{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:14px;}
+.about-card{background:linear-gradient(135deg,#FBEAF0,#F2BCCF);border-radius:24px;padding:48px;text-align:center;position:relative;overflow:hidden;}
+.about-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 75% 20%,rgba(212,168,67,.18),transparent 55%);}
+.about-card .ac-icon{font-size:60px;margin-bottom:14px;position:relative;}
+.about-card blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;color:var(--brown);line-height:1.65;position:relative;}
+
+/* BOX LAB */
+.box-lab{background:var(--brown);padding:96px 48px;text-align:center;position:relative;overflow:hidden;}
+.box-lab::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(212,168,67,.13) 1px,transparent 1px);background-size:28px 28px;}
+.box-lab h2{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,60px);color:#fff;margin-bottom:12px;position:relative;}
+.box-lab h2 span{color:var(--gold);}
+.box-lab>p{color:rgba(255,255,255,.6);font-size:17px;margin-bottom:56px;position:relative;}
+.boxes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto;position:relative;}
+.box-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);border-radius:24px;padding:36px 28px;text-align:left;cursor:pointer;transition:all .28s;position:relative;overflow:hidden;}
+.box-card:hover{background:rgba(255,255,255,.11);transform:translateY(-5px);border-color:var(--gold);}
+.box-card.featured{background:var(--pink);border-color:var(--pink);}
+.box-card.featured:hover{background:var(--dark-pink);}
+.box-badge{position:absolute;top:14px;right:14px;background:var(--gold);color:var(--brown);font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:100px;}
+.box-emoji{font-size:44px;margin-bottom:16px;display:block;}
+.box-card h3{font-family:'Playfair Display',serif;font-size:18px;color:#fff;margin-bottom:6px;}
+.box-price{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--gold);margin-bottom:14px;display:block;}
+.box-includes{list-style:none;}
+.box-includes li{color:rgba(255,255,255,.72);font-size:13px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:flex-start;gap:7px;line-height:1.4;}
+.box-includes li::before{content:'✦';color:var(--gold);font-size:9px;margin-top:4px;flex-shrink:0;}
+.box-cta{display:block;margin-top:24px;background:rgba(255,255,255,.14);color:#fff;text-align:center;padding:11px;border-radius:12px;font-weight:600;font-size:13px;transition:background .2s;border:none;cursor:pointer;width:100%;font-family:'DM Sans',sans-serif;}
+.box-cta:hover{background:rgba(255,255,255,.24);}
+
+/* BUILDER */
+#builder{padding:96px 48px;max-width:860px;margin:0 auto;}
+.builder-header{text-align:center;margin-bottom:56px;}
+.builder-header h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,52px);color:var(--brown);}
+
+/* STEPS */
+.step{background:#fff;border-radius:24px;padding:32px;margin-bottom:20px;box-shadow:0 2px 16px rgba(59,30,8,.06);border:2px solid transparent;transition:border-color .25s;}
+.step.active{border-color:var(--pink);}
+.step-header{display:flex;align-items:center;gap:14px;margin-bottom:24px;}
+.step-num{width:34px;height:34px;background:var(--pink);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0;transition:background .2s;}
+.step-num.done{background:#43A047;}
+.step h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--brown);}
+.step-locked{opacity:.38;pointer-events:none;}
+
+/* BOX TYPE CARDS */
+.btg{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.sel-card{border:2px solid rgba(59,30,8,.1);border-radius:16px;padding:20px 16px;background:#fff;cursor:pointer;transition:all .2s;text-align:center;font-family:'DM Sans',sans-serif;}
+.sel-card:hover{border-color:var(--pink);background:var(--light-pink);}
+.sel-card.selected{border-color:var(--pink);background:var(--light-pink);}
+.sel-card .se{font-size:32px;display:block;margin-bottom:8px;}
+.sel-card .sn{font-family:'Playfair Display',serif;font-size:14px;color:var(--brown);font-weight:700;display:block;margin-bottom:4px;}
+.sel-card .sp{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pink);display:block;}
+.sel-card .sd{font-size:11px;color:var(--muted);display:block;margin-top:5px;line-height:1.4;}
+
+/* COOKIE GRID */
+.cookie-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.cookie-btn{border:2px solid rgba(59,30,8,.1);border-radius:12px;padding:12px 13px;background:#fff;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:11px;text-align:left;width:100%;font-family:'DM Sans',sans-serif;}
+.cookie-btn:hover{border-color:var(--pink);background:var(--light-pink);}
+.cookie-btn.selected{border-color:var(--pink);background:var(--light-pink);box-shadow:0 0 0 3px rgba(232,84,122,.14);}
+.cookie-btn.selected .cbck{opacity:1;}
+.cb-e{font-size:26px;flex-shrink:0;}
+.cb-i{flex:1;}
+.cb-n{font-weight:600;font-size:13px;color:var(--brown);display:block;}
+.cb-d{font-size:11px;color:var(--muted);display:block;margin-top:2px;line-height:1.35;}
+.cb-p{font-size:12px;color:var(--pink);font-weight:700;display:block;margin-top:3px;}
+.cbck{width:20px;height:20px;border-radius:50%;background:var(--pink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;opacity:0;flex-shrink:0;transition:opacity .18s;font-weight:700;}
+.ck-display{background:var(--light-pink);border-radius:12px;padding:12px 16px;margin-top:14px;display:none;align-items:center;gap:12px;}
+.ck-display.show{display:flex;}
+.ckd-e{font-size:26px;}
+.ckd-i{flex:1;}
+.ckd-n{font-weight:600;font-size:14px;color:var(--brown);}
+.ckd-s{font-size:11px;color:var(--muted);}
+.ckd-p{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--pink);}
+
+/* CRUMB BUILDER */
+.crumb-builder{display:none;}
+.crumb-builder.show{display:block;}
+.crumb-row{display:flex;align-items:center;gap:12px;border:1.5px solid rgba(59,30,8,.09);border-radius:12px;padding:12px 14px;margin-bottom:8px;background:#fff;transition:border-color .15s;}
+.crumb-row.has-qty{border-color:var(--pink);background:var(--light-pink);}
+.cr-e{font-size:22px;flex-shrink:0;}
+.cr-i{flex:1;}
+.cr-n{font-size:13px;font-weight:600;color:var(--brown);display:block;}
+.cr-p{font-size:11px;color:var(--muted);display:block;}
+.qty-ctrl{display:flex;align-items:center;gap:9px;}
+.crumb-bar{display:flex;justify-content:space-between;align-items:center;background:var(--brown);color:#fff;border-radius:12px;padding:12px 18px;margin-top:12px;font-size:13px;font-weight:500;}
+.crumb-bar .cb-count{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);}
+
+/* ALLERGEN */
+.allg-notice{display:flex;gap:14px;align-items:flex-start;background:#FFF8EC;border:1px solid rgba(212,168,67,.35);border-left:4px solid var(--gold);border-radius:16px;padding:15px 17px;margin-bottom:18px;font-size:13px;color:var(--brown);line-height:1.65;}
+.allg-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
+.allg-text strong{display:block;font-size:14px;margin-bottom:3px;}
+.allg-tag{display:inline-block;background:rgba(59,30,8,.07);border-radius:100px;padding:1px 8px;font-size:11px;font-weight:600;margin:0 2px;white-space:nowrap;}
+.bdg{display:inline-block;border-radius:100px;padding:2px 8px;font-size:10px;font-weight:600;margin:1px 2px 0 0;white-space:nowrap;}
+.bdg-dairy{background:#EBF4FF;color:#1D4ED8;}
+.bdg-nuts{background:#FEF3C7;color:#92400E;}
+.bdg-gluten{background:#F3F4F6;color:#374151;}
+
+/* CHOCO */
+.choco-grid{display:grid;grid-template-columns:1fr;gap:14px;}
+.choco-card{border:2px solid rgba(59,30,8,.1);border-radius:16px;padding:20px;background:#fff;transition:border-color .2s;}
+.choco-card.selected-choco{border-color:var(--pink);}
+.choco-top{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px;}
+.ch-e{font-size:36px;flex-shrink:0;}
+.ch-i{flex:1;}
+.ch-n{font-weight:700;font-size:15px;color:var(--brown);display:block;margin-bottom:3px;}
+.ch-l{font-size:11px;color:var(--pink);font-weight:600;display:block;margin-bottom:6px;}
+.ch-d{font-size:12px;color:var(--muted);line-height:1.5;display:block;}
+.ch-v{display:block;font-size:11px;color:var(--pink);font-style:italic;margin-top:5px;line-height:1.4;}
+.ch-a{display:block;margin-top:8px;}
+
+/* nuts toggle */
+.nuts-tgl{background:#FFF8EC;border:1.5px solid rgba(212,168,67,.3);border-radius:12px;padding:12px 14px;margin-bottom:12px;}
+.nuts-lbl{display:block;font-size:13px;font-weight:600;color:var(--brown);margin-bottom:10px;}
+.nuts-btns{display:flex;gap:8px;}
+.nuts-opt{flex:1;padding:9px 10px;border-radius:10px;border:2px solid rgba(59,30,8,.1);background:#fff;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif;text-align:center;}
+.nuts-opt:hover{border-color:var(--gold);color:var(--brown);}
+.nuts-yes{background:#92400E;border-color:#92400E;color:#fff;}
+.nuts-no{background:#2E7D32;border-color:#2E7D32;color:#fff;}
+.choco-add-bar{display:flex;gap:10px;align-items:center;}
+.choco-add-btn{flex:1;padding:11px 16px;border-radius:12px;border:2px solid var(--pink);background:#fff;color:var(--pink);font-size:14px;font-weight:600;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif;text-align:center;}
+.choco-add-btn:hover{background:var(--pink);color:#fff;}
+.choco-add-btn.added{background:var(--pink);color:#fff;cursor:default;}
+
+/* TRUFFLES */
+.truffle-grid{display:grid;grid-template-columns:1fr;gap:9px;}
+.truffle-card{border:2px solid rgba(59,30,8,.09);border-radius:12px;padding:13px 16px;background:#fff;transition:all .18s;display:flex;align-items:center;gap:12px;}
+.truffle-card:hover{border-color:var(--gold);background:#FFF8EC;}
+.truffle-card.selected{border-color:var(--gold);background:#FFF8EC;box-shadow:0 0 0 2px rgba(212,168,67,.18);}
+.tfe{font-size:22px;flex-shrink:0;}
+.tfb{flex:1;min-width:0;}
+.tfn{font-size:13px;font-weight:700;color:var(--brown);display:block;margin-bottom:2px;}
+.tfd{font-size:11px;color:var(--muted);line-height:1.35;display:block;margin-bottom:4px;}
+.tfa{display:block;}
+.tf-ctrl{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+
+/* PICKUP */
+.hint{font-size:13px;color:var(--muted);margin-bottom:14px;}
+.pickup-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.date-card{border:2px solid rgba(59,30,8,.1);border-radius:12px;padding:18px;background:#fff;cursor:pointer;transition:all .18s;text-align:center;font-family:'DM Sans',sans-serif;}
+.date-card:hover{border-color:var(--pink);background:var(--light-pink);}
+.date-card.selected{border-color:var(--pink);background:var(--light-pink);}
+.dc-day{font-family:'Playfair Display',serif;font-size:17px;color:var(--brown);font-weight:700;}
+.dc-sub{font-size:12px;color:var(--muted);margin-top:4px;}
+.addr-box{background:var(--light-pink);border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:center;margin-bottom:18px;}
+.addr-icon{font-size:22px;}
+.addr-text{font-size:13px;color:var(--brown);line-height:1.55;}
+.addr-text strong{display:block;font-weight:700;margin-bottom:1px;}
+.prem-note{background:var(--light-pink);border:1.5px solid rgba(232,84,122,.25);border-radius:12px;padding:13px 16px;font-size:13px;color:var(--brown);line-height:1.65;margin-bottom:14px;}
+.prem-note strong{color:var(--pink);}
+.gift-lbl{display:block;font-size:13px;font-weight:600;color:var(--brown);margin-bottom:8px;margin-top:16px;}
+.gift-ta{width:100%;border:2px solid rgba(59,30,8,.1);border-radius:12px;padding:12px 14px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--brown);resize:none;transition:border-color .2s;background:#fff;}
+.gift-ta:focus{outline:none;border-color:var(--pink);}
+
+/* ORDER SUMMARY */
+.order-summary{background:var(--brown);border-radius:24px;padding:28px;color:#fff;margin-top:24px;}
+.order-summary h4{font-family:'Playfair Display',serif;font-size:19px;margin-bottom:18px;color:var(--gold);}
+.sum-ln{display:flex;justify-content:space-between;align-items:flex-start;font-size:13px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.75);gap:12px;}
+.sum-ln span:last-child{text-align:right;max-width:60%;}
+.sum-ln.total{border-bottom:none;padding-top:14px;font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;}
+.sum-ln.total span:last-child{color:var(--gold);}
+.dep-strip{display:flex;justify-content:space-between;align-items:center;background:rgba(212,168,67,.13);border:1px solid rgba(212,168,67,.3);border-radius:12px;padding:13px 16px;margin:14px 0 8px;}
+.dep-strip .dl{font-size:13px;color:rgba(255,255,255,.8);font-weight:500;}
+.dep-strip .da{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gold);}
+.dep-note{font-size:11px;color:rgba(255,255,255,.45);line-height:1.55;}
+
+/* PAYMENT */
+.pay-panel{background:#fff;border-radius:24px;padding:32px;margin-top:20px;box-shadow:0 4px 24px rgba(59,30,8,.07);}
+.pay-panel h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--brown);margin-bottom:6px;}
+.pay-panel>p{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.pay-card{border:2px solid rgba(59,30,8,.1);border-radius:16px;padding:18px;cursor:pointer;transition:all .2s;position:relative;background:#fff;}
+.pay-card:hover{border-color:var(--pink);background:var(--light-pink);}
+.pay-card.selected{border-color:var(--pink);background:var(--light-pink);}
+.pay-card .pc-ic{font-size:30px;display:block;margin-bottom:10px;}
+.pay-card .pc-nm{font-weight:700;font-size:14px;color:var(--brown);display:block;margin-bottom:4px;}
+.pay-card .pc-ds{font-size:12px;color:var(--muted);line-height:1.45;display:block;}
+.pay-card .pc-ck{position:absolute;top:12px;right:12px;width:20px;height:20px;background:var(--pink);color:#fff;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .18s;}
+.pay-card.selected .pc-ck{opacity:1;}
+.pay-detail{background:#F8F6F3;border:1px solid rgba(59,30,8,.08);border-radius:16px;padding:20px;animation:fadeUp .25s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.pd-hd{display:flex;gap:12px;align-items:center;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(59,30,8,.07);}
+.pd-hd .phic{font-size:26px;}
+.pd-hd strong{display:block;font-size:15px;color:var(--brown);margin-bottom:2px;}
+.pd-hd span{font-size:12px;color:var(--muted);}
+.pd-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(59,30,8,.05);font-size:13px;}
+.pd-row .prl{color:var(--muted);}
+.pd-row .prv{font-weight:600;color:var(--brown);}
+.pd-row .prv.hi{color:var(--pink);font-family:'Bebas Neue',sans-serif;font-size:22px;}
+.pd-note{background:#FFF8EC;border-left:3px solid var(--gold);border-radius:0 6px 6px 0;padding:11px 13px;font-size:12px;color:var(--brown);line-height:1.6;margin:14px 0;}
+.pd-btns{display:flex;flex-direction:column;gap:10px;}
+
+/* MODAL */
+.modal-ov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .28s;padding:20px;}
+.modal-ov.show{opacity:1;pointer-events:all;}
+.modal{background:var(--cream);border-radius:28px;padding:48px 40px;max-width:460px;width:100%;text-align:center;transform:scale(.9);transition:transform .28s;}
+.modal-ov.show .modal{transform:scale(1);}
+.modal .me{font-size:60px;margin-bottom:14px;}
+.modal h3{font-family:'Playfair Display',serif;font-size:28px;color:var(--brown);margin-bottom:10px;}
+.modal p{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:26px;}
+
+/* FOOTER */
+footer{background:var(--brown);color:rgba(255,255,255,.55);padding:56px 48px 36px;position:relative;z-index:1;}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:40px;flex-wrap:wrap;}
+.ft-brand .logo{color:#fff;}
+.ft-brand .logo span{color:var(--gold);}
+.ft-brand p{margin-top:12px;font-size:13px;line-height:1.75;max-width:250px;}
+.ft-col h4{color:#fff;font-size:12px;font-weight:700;margin-bottom:14px;letter-spacing:1.5px;text-transform:uppercase;}
+.ft-col ul{list-style:none;}
+.ft-col ul li{margin-bottom:9px;}
+.ft-col ul a{color:rgba(255,255,255,.55);text-decoration:none;font-size:13px;transition:color .18s;}
+.ft-col ul a:hover{color:var(--gold);}
+.ft-btm{border-top:1px solid rgba(255,255,255,.09);padding-top:22px;display:flex;justify-content:space-between;font-size:12px;flex-wrap:wrap;gap:10px;}
+.ft-btm a{color:rgba(255,255,255,.35);text-decoration:none;}
+
+/* TOAST */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(36px);background:var(--brown);color:#fff;padding:12px 26px;border-radius:100px;font-size:13px;font-weight:500;z-index:9999;opacity:0;transition:all .3s;white-space:nowrap;pointer-events:none;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* UTILS */
+.hidden{display:none!important;}
+.coll-hdr{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.coll-hdr .chl{font-size:12px;font-weight:700;color:var(--brown);}
+.coll-hdr .chline{flex:1;height:1px;background:rgba(59,30,8,.07);}
+.coll-hdr .chh{font-size:11px;color:var(--muted);}
+
+/* RESPONSIVE */
+@media(max-width:900px){.boxes-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:768px){
+  nav{padding:12px 20px;}.nav-links{display:none;}
+  .hero{padding:56px 20px;min-height:auto;}.hero-visual{display:none;}
+  .about-inner{grid-template-columns:1fr;padding:60px 20px;gap:36px;}
+  .box-lab{padding:60px 20px;}.boxes-grid{grid-template-columns:1fr;}
+  #builder{padding:60px 20px;}
+  .btg{grid-template-columns:1fr;}
+  .cookie-grid{grid-template-columns:1fr;}
+  .pickup-grid{grid-template-columns:1fr;}
+  .pay-grid{grid-template-columns:1fr;}
+  footer{padding:40px 20px 28px;}.ft-top{flex-direction:column;gap:28px;}
+  .divider{padding:0 20px;}
+}
+</style>
+</head>
+<body>
+
+<div class="ann">
+  <span class="ann-dot"></span>
+  <strong>🎉 Grand Opening & Mother's Day Edition</strong> — Only 20 Boxes Available. Pre-orders close <strong>May 3rd!</strong>
+</div>
+
+<nav>
+  <a href="#home" class="logo">Treats by <span>Seteisha</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#boxes">The Boxes</a></li>
+    <li><a href="#builder">Box Builder</a></li>
+    <li><a href="#builder" class="nav-pill">Pre-Order Now</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="hero-tag">✦ Mother's Day Edition — Limited to 20 boxes ✦</span>
+    <h1>Handcrafted<br><em>cookie boxes</em><br>with love.</h1>
+    <p>Built bite by bite — choose your cookies, chocolate bars, and signature truffles. Every box is made to order, made to remember.</p>
+    <div class="hero-btns">
+      <a href="#builder" class="btn btn-primary">Build Your Box →</a>
+      <a href="#about" class="btn btn-outline">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-circle">
+      <div class="hce">🍪</div>
+      <div class="hce">🍫</div>
+      <div class="hce">🍬</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>✦</span><span>🍪</span><span>✦</span></div>
+
+<section id="about">
+  <div class="about-inner">
+    <div>
+      <span class="sec-tag">✦ Our Story</span>
+      <h2>A mother-daughter recipe for something special.</h2>
+      <p>Treats by Seteisha was born in our kitchen, between laughter and flour-dusted countertops. What started as a mother-daughter baking tradition became something the whole neighbourhood couldn't stop talking about.</p>
+      <p>Every cookie, every truffle, every chocolate bar is crafted with the same love we put into our very first batch — and now we're bringing that warmth directly to you.</p>
+      <a href="#builder" class="btn btn-primary" style="font-size:14px;padding:13px 28px;margin-top:8px;">Start Building Your Box</a>
+    </div>
+    <div class="about-card">
+      <div class="ac-icon">👩‍👧</div>
+      <blockquote>"We didn't set out to start a business. We just loved baking together — and then people started asking for boxes."</blockquote>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>✦</span><span>🍫</span><span>✦</span></div>
+
+<section class="box-lab" id="boxes">
+  <h2>The <span>Box</span> Lab</h2>
+  <p>Four ways to indulge. Pick your box, then build your dream combination.</p>
+  <div class="boxes-grid">
+    <div class="box-card" onclick="selectBox('basic4');scrollToBuilder()">
+      <span class="box-emoji">📦</span>
+      <h3>Cookie Crumb Box (4)</h3>
+      <span class="box-price">From $2,000</span>
+      <ul class="box-includes">
+        <li>Any 4 cookies — mix &amp; match</li>
+        <li>Full menu price per cookie</li>
+        <li>No discount applied</li>
+      </ul>
+      <button class="box-cta">Build This Box →</button>
+    </div>
+    <div class="box-card" onclick="selectBox('basic6');scrollToBuilder()">
+      <span class="box-badge">Bundle Deal</span>
+      <span class="box-emoji">🍪</span>
+      <h3>Cookie Crumb Box (6)</h3>
+      <span class="box-price">10% Off</span>
+      <ul class="box-includes">
+        <li>Any 6 cookies — mix &amp; match</li>
+        <li>Max 2 of the same flavor</li>
+        <li>10% discount applied automatically</li>
+      </ul>
+      <button class="box-cta">Build This Box →</button>
+    </div>
+    <div class="box-card" onclick="selectBox('basic');scrollToBuilder()">
+      <span class="box-emoji">🎁</span>
+      <h3>Basic Crumb Box</h3>
+      <span class="box-price">$5,000–$5,600</span>
+      <ul class="box-includes">
+        <li>1 Cookie of your choice</li>
+        <li>2 Signature Chocolate Bars</li>
+        <li>6 Signature Truffles</li>
+      </ul>
+      <button class="box-cta">Build This Box →</button>
+    </div>
+    <div class="box-card featured" onclick="selectBox('premium');scrollToBuilder()">
+      <span class="box-badge">Most Popular</span>
+      <span class="box-emoji">👑</span>
+      <h3>Premium Crumb Box</h3>
+      <span class="box-price">$6,500–$7,000</span>
+      <ul class="box-includes">
+        <li>2 Cookies of your choice</li>
+        <li>2 Signature Chocolate Bars</li>
+        <li>9 Signature Truffles</li>
+        <li>Custom Gift Card included</li>
+      </ul>
+      <button class="box-cta">Build This Box →</button>
+    </div>
+  </div>
+</section>
+
+<section id="builder">
+  <div class="builder-header">
+    <span class="sec-tag">✦ Step-by-Step</span>
+    <h2>Build Your Box</h2>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step active" id="step1">
+    <div class="step-header"><div class="step-num" id="s1n">1</div><h3>Choose Your Box</h3></div>
+    <div class="btg" id="btg">
+      <button class="sel-card" onclick="selectBox('basic4')" id="bt-basic4">
+        <span class="se">📦</span><span class="sn">Cookie Crumb Box (4)</span>
+        <span class="sp">From $2,000</span><span class="sd">4 cookies · mix &amp; match · full price</span>
+      </button>
+      <button class="sel-card" onclick="selectBox('basic6')" id="bt-basic6">
+        <span class="se">🍪</span><span class="sn">Cookie Crumb Box (6)</span>
+        <span class="sp">10% Bundle</span><span class="sd">6 cookies · max 2 same flavor · 10% off</span>
+      </button>
+      <button class="sel-card" onclick="selectBox('basic')" id="bt-basic">
+        <span class="se">🎁</span><span class="sn">Basic Crumb Box</span>
+        <span class="sp">$5,000–$5,600</span><span class="sd">1 cookie · 2 choco bars · 6 truffles</span>
+      </button>
+      <button class="sel-card" onclick="selectBox('premium')" id="bt-premium">
+        <span class="se">👑</span><span class="sn">Premium Crumb Box</span>
+        <span class="sp">$6,500–$7,000</span><span class="sd">2 cookies · 2 choco bars · 9 truffles · gift card</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step step-locked" id="step2">
+    <div class="step-header"><div class="step-num" id="s2n">2</div><h3 id="s2t">Select Your Cookie</h3></div>
+    <div id="single-picker">
+      <p class="hint" id="single-hint">Choose 1 cookie for your box.</p>
+      <div class="cookie-grid" id="cookieGrid"></div>
+      <div class="ck-display" id="ckDisplay">
+        <span class="ckd-e" id="ckdE">🍪</span>
+        <div class="ckd-i"><div class="ckd-n" id="ckdN">—</div><div class="ckd-s" id="ckdS">Selected</div></div>
+        <span class="ckd-p" id="ckdP">—</span>
+      </div>
+    </div>
+    <div id="crumb-picker" class="crumb-builder">
+      <p class="hint" id="crumb-hint">Pick cookies — max 2 of the same flavor.</p>
+      <div id="crumbRows"></div>
+      <div class="crumb-bar"><span>Cookies selected</span><span class="cb-count" id="crumbCount">0 / 4</span></div>
+    </div>
+  </div>
+
+  <!-- ALLERGEN NOTICE -->
+  <div class="allg-notice">
+    <div class="allg-icon">⚠️</div>
+    <div class="allg-text">
+      <strong>Allergen Information</strong>
+      All products are made in a kitchen handling <span class="allg-tag">🥛 Dairy</span> <span class="allg-tag">🥜 Nuts</span> <span class="allg-tag">🌾 Gluten</span>. Allergens are listed on each item. Severe allergy? Please WhatsApp us before ordering.
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step step-locked" id="step3">
+    <div class="step-header"><div class="step-num" id="s3n">3</div><h3>Choose Your Chocolate Bars</h3></div>
+    <p class="hint" id="choco-hint">Select 2 chocolate bars for your box.</p>
+    <div class="choco-grid" id="chocoGrid"></div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step step-locked" id="step4">
+    <div class="step-header"><div class="step-num" id="s4n">4</div><h3 id="s4t">Select Your Truffle Flavors</h3></div>
+    <p class="hint" id="truffle-hint">Choose your truffle flavors. Max 2 of each.</p>
+    <div class="coll-hdr"><span class="chl">✦ Signature Truffle Collection</span><span class="chline"></span><span class="chh">Use + / − to pick</span></div>
+    <div class="truffle-grid" id="truffleGrid"></div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step step-locked" id="step5">
+    <div class="step-header"><div class="step-num" id="s5n">5</div><h3>Pickup Details</h3></div>
+    <div class="addr-box">
+      <span class="addr-icon">📍</span>
+      <div class="addr-text"><strong>Pickup Location</strong>13a Caledonia Rd, Mandeville, Jamaica</div>
+    </div>
+    <p style="font-size:13px;font-weight:600;color:var(--brown);margin-bottom:12px;">Choose your pickup date:</p>
+    <div class="pickup-grid">
+      <button class="date-card" onclick="pickDate('May 7')" id="d-May7"><div class="dc-day">Wednesday, May 7th</div><div class="dc-sub">Mother's Day Eve 🌷</div></button>
+      <button class="date-card" onclick="pickDate('May 8')" id="d-May8"><div class="dc-day">Thursday, May 8th</div><div class="dc-sub">Mother's Day 💐</div></button>
+    </div>
+    <div id="premNote" class="prem-note hidden">
+      <strong>✨ Premium Gift Card included!</strong> After ordering, WhatsApp us at <strong>+1 (658) 203-3013</strong> with a photo of the recipient and the message you'd like written inside the card.
+    </div>
+    <label class="gift-lbl">🎀 Gift Message <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+    <textarea class="gift-ta" id="giftMsg" rows="3" placeholder="Happy Mother's Day! You deserve every crumb of this… 🍪"></textarea>
+  </div>
+
+  <!-- ORDER SUMMARY -->
+  <div class="order-summary">
+    <h4>✦ Order Summary</h4>
+    <div class="sum-ln"><span>Box</span><span id="sumBox">—</span></div>
+    <div class="sum-ln" id="sumCookieLn"><span>Cookie(s)</span><span id="sumCookie">—</span></div>
+    <div class="sum-ln hidden" id="sumChocoLn"><span>Chocolate Bars</span><span id="sumChoco">—</span></div>
+    <div class="sum-ln hidden" id="sumTruffleLn"><span>Truffles</span><span id="sumTruffle">—</span></div>
+    <div class="sum-ln"><span>Pickup Date</span><span id="sumDate">—</span></div>
+    <div class="sum-ln total"><span>Total</span><span id="sumTotal">$0 JMD</span></div>
+    <div class="dep-strip"><span class="dl">50% Deposit Due Now</span><span class="da" id="depAmt">$0 JMD</span></div>
+    <p class="dep-note">Remaining 50% is due at pickup. Order only confirmed once we receive your deposit and WhatsApp you confirmation.</p>
+    <button class="btn btn-checkout" onclick="openPay()" id="checkoutBtn" disabled>Proceed to Payment →</button>
+  </div>
+
+  <!-- PAYMENT PANEL -->
+  <div class="pay-panel hidden" id="payPanel">
+    <h3>How would you like to pay your deposit?</h3>
+    <p>Both go directly to us — secure and simple.</p>
+    <div class="pay-grid">
+      <div class="pay-card" onclick="choosePay('bank')" id="payBank">
+        <span class="pc-ic">🏦</span>
+        <span class="pc-nm">Bank Transfer</span>
+        <span class="pc-ds">Send via your bank's online banking or app. WhatsApp us your screenshot once sent.</span>
+        <div class="pc-ck">✓</div>
+      </div>
+      <div class="pay-card" onclick="choosePay('wipay')" id="payWipay">
+        <span class="pc-ic">💳</span>
+        <span class="pc-nm">Pay by Card (WiPay)</span>
+        <span class="pc-ds">Visa or Mastercard via WiPay — the Caribbean's trusted card platform.</span>
+        <div class="pc-ck">✓</div>
+      </div>
+    </div>
+    <div class="pay-detail hidden" id="bankDetail">
+      <div class="pd-hd"><span class="phic">🏦</span><div><strong>Bank Transfer Details</strong><span>Send exactly the deposit amount</span></div></div>
+      <div class="pd-row"><span class="prl">Account Name</span><span class="prv">Seteisha Hall</span></div>
+      <div class="pd-row"><span class="prl">Bank</span><span class="prv">FGB Mandeville</span></div>
+      <div class="pd-row"><span class="prl">Account Type</span><span class="prv">Savings</span></div>
+      <div class="pd-row"><span class="prl">Account Number</span><span class="prv">990848754016</span></div>
+      <div class="pd-row"><span class="prl">Amount to Send</span><span class="prv hi" id="bankAmt">$0 JMD</span></div>
+      <div class="pd-note">💡 After transferring, tap below to send your order + payment screenshot via WhatsApp. Your spot is only confirmed once we verify receipt.</div>
+      <div class="pd-btns">
+        <button class="btn btn-wa" onclick="sendWA()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Send Order via WhatsApp
+        </button>
+      </div>
+    </div>
+    <div class="pay-detail hidden" id="wipayDetail">
+      <div class="pd-hd"><span class="phic">💳</span><div><strong>Pay by Card via WiPay</strong><span>Secure — Visa &amp; Mastercard accepted</span></div></div>
+      <div class="pd-row"><span class="prl">Deposit Amount</span><span class="prv hi" id="wipayAmt">$0 JMD</span></div>
+      <div class="pd-note">You'll be taken to our WiPay payment link. After paying, tap the WhatsApp button so we can match your payment to your order and confirm your spot.</div>
+      <div class="pd-btns">
+        <a class="btn-wipay" id="wipayLink" href="https://wipaycaribbean.com" target="_blank">Pay Deposit via WiPay →</a>
+        <button class="btn btn-wa" onclick="sendWA()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Confirm Order via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="#home" class="logo">Treats by <span>Seteisha</span></a>
+      <p>Handcrafted cookie boxes made with love in Mandeville, Jamaica. Limited edition Mother's Day drops.</p>
+    </div>
+    <div class="ft-col"><h4>Navigate</h4><ul>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#boxes">The Boxes</a></li>
+      <li><a href="#builder">Box Builder</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Pickup</h4><ul>
+      <li><a href="#builder">13a Caledonia Rd</a></li>
+      <li><a href="#builder">Mandeville, Jamaica</a></li>
+      <li><a href="#builder">May 7th or May 8th</a></li>
+    </ul></div>
+    <div class="ft-col"><h4>Contact</h4><ul>
+      <li><a href="https://wa.me/16582033013" target="_blank">+1 (658) 203-3013</a></li>
+      <li><a href="#builder">Pre-orders close May 3rd</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-btm">
+    <span>© 2026 Treats by Seteisha. All rights reserved.</span>
+    <span>Built & managed by <a href="https://hallempire.online" target="_blank" style="color:rgba(255,255,255,.5);text-decoration:none;transition:color .18s;" onmouseover="this.style.color='#D4A843'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Hall Empire</a></span>
+  </div>
+</footer>
+
+<div class="modal-ov" id="modal">
+  <div class="modal">
+    <div class="me">🎉</div>
+    <h3>You're almost there!</h3>
+    <p>Your order summary is on its way to WhatsApp. Once we receive and confirm your deposit, your box is officially reserved. See you on pickup day! 🍪</p>
+    <button class="btn-modal" onclick="closeModal()">Got it!</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* DATA */
+const COOKIES=[
+  {id:'strawberry',name:'Strawberry Cheesecake Cookie',price:800,emoji:'🍓',desc:'Chunky cookie with strawberry pieces and a rich cream cheese center.'},
+  {id:'rocky',name:'Rocky Road Cookie',price:750,emoji:'🍫',desc:'Packed with caramel chunks, nuts, vegan marshmallows, and mini M&Ms.'},
+  {id:'lemon',name:'Lemon Drizzle Cookie',price:500,emoji:'🍋',desc:'Soft lemon cookie topped with a sweet lemon glaze.'},
+  {id:'brookie',name:'Brookie Cookie',price:650,emoji:'🍪',desc:'Brownie meets chocolate chip cookie — chocolate chunks throughout.'},
+  {id:'redvelvet',name:'Red Velvet Oreo Cookie',price:650,emoji:'❤️',desc:'Red velvet with white chocolate chunks and Oreo pieces.'},
+  {id:'oatmeal',name:'Classic Chewy Oatmeal Raisin',price:500,emoji:'🌾',desc:'Traditional chewy oatmeal cookie with raisins.'},
+];
+
+const CHOCOLATES=[
+  {id:'white_luxe',name:'White Chocolate Luxe Bar',emoji:'🍫',desc:'Creamy white chocolate with cashews, pistachios, yogurt-covered cranberries, strawberry powder, and vanilla Oreo chunks.',variation:'Can be made without nuts for a lighter nut-free profile.',allergens:['dairy','nuts']},
+  {id:'fruit_nut',name:'Milk Chocolate Fruit & Nut Gold Bar',emoji:'✨',desc:'Smooth milk chocolate with dried fruits, roasted nuts, and yogurt-covered cranberries, finished with edible gold dust.',variation:null,allergens:['dairy','nuts']},
+];
+
+const TRUFFLES=[
+  {id:'caramel_crunch',name:'Caramel Crunch Dome',emoji:'🍯',allergens:['dairy'],desc:'Milk chocolate shell with soft caramel center and crisp rice crunch.'},
+  {id:'classic_caramel',name:'Classic Caramel Square',emoji:'🥛',allergens:['dairy'],desc:'White chocolate shell with a smooth, silky caramel filling.'},
+  {id:'lemon_silk',name:'Lemon Silk Square',emoji:'🍋',allergens:['dairy'],desc:'Milk chocolate shell with a tangy lemon tart center.'},
+  {id:'oreo_vanilla',name:'Oreo Vanilla Dome',emoji:'🧁',allergens:['dairy','gluten'],desc:'White chocolate shell filled with creamy vanilla Oreo fudge.'},
+  {id:'coconut_caramel',name:'Coconut Caramel Swirl',emoji:'🥥',allergens:['dairy'],desc:'Milk chocolate shell with caramelized coconut and a white chocolate swirl.'},
+  {id:'strawberry_cream',name:'Strawberry Cream Square',emoji:'🍓',allergens:['dairy','gluten'],desc:'White chocolate shell with strawberry chocolate cream and wafer crunch.'},
+  {id:'fruit_nut_gold',name:'Fruit & Nut Gold Square',emoji:'🥜',allergens:['dairy','nuts'],desc:'Milk chocolate with dried fruits and nuts, finished with edible gold.'},
+  {id:'strawberry_fudge',name:'Strawberry Fudge Truffle',emoji:'🍓',allergens:['dairy'],desc:'Milk chocolate fudge with strawberry filling, coated in white chocolate and cocoa dust.'},
+  {id:'ganache_dome',name:'Classic Chocolate Ganache Dome ⭐',emoji:'🍫',allergens:['dairy'],desc:'Milk chocolate shell with a smooth, rich dark chocolate ganache center.'},
+  {id:'neapolitan',name:'Neapolitan Gold Wafer Truffle 👑',emoji:'👑',allergens:['dairy','gluten','nuts'],desc:'Layered chocolate, strawberry, and vanilla wafer, enrobed in white chocolate with fluid gold dust. Signature Piece.'},
+];
+
+const BOX_CFG={
+  basic4: {cookieCount:4,chocoCount:0,truffleCount:0,basePrice:0,discount:0,isCrumb:true,isPremium:false,label:'Cookie Crumb Box (4)'},
+  basic6: {cookieCount:6,chocoCount:0,truffleCount:0,basePrice:0,discount:0.10,isCrumb:true,isPremium:false,label:'Cookie Crumb Box (6) — Bundle Deal'},
+  basic:  {cookieCount:1,chocoCount:2,truffleCount:6,basePrice:5000,discount:0,isCrumb:false,isPremium:false,label:'Basic Crumb Box'},
+  premium:{cookieCount:2,chocoCount:2,truffleCount:9,basePrice:6500,discount:0,isCrumb:false,isPremium:true,label:'Premium Crumb Box'},
+};
+
+/* STATE */
+let S={boxType:null,crumbQtys:{},selectedCookies:[],chocoAdded:[],nutsPrefs:{},truffleQtys:{},pickupDate:null,total:0,payMethod:null};
+
+/* HELPERS */
+function g(id){return document.getElementById(id);}
+function bdg(t){const m={dairy:'🥛 Dairy',nuts:'🥜 Nuts',gluten:'🌾 Gluten'};return '<span class="bdg bdg-'+t+'">'+(m[t]||t)+'</span>';}
+function toast(msg){const el=g('toast');el.textContent=msg;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('show'),2600);}
+function scrollToBuilder(){setTimeout(()=>g('builder').scrollIntoView({behavior:'smooth'}),80);}
+function markDone(id){g(id).classList.add('done');}
+function unlock(id){g(id).classList.remove('step-locked');}
+function lock(id){g(id).classList.add('step-locked');}
+
+/* INIT */
+function init(){
+  renderChocoGrid();
+  renderTruffleGrid();
+  COOKIES.forEach(c=>{S.crumbQtys[c.id]=0;});
+  CHOCOLATES.forEach(ch=>{if(ch.allergens.includes('nuts'))S.nutsPrefs[ch.id]=true;});
+  TRUFFLES.forEach(t=>{S.truffleQtys[t.id]=0;});
+}
+
+/* SELECT BOX */
+function selectBox(type){
+  S.boxType=type;
+  S.crumbQtys={};COOKIES.forEach(c=>{S.crumbQtys[c.id]=0;});
+  S.selectedCookies=[];S.chocoAdded=[];
+  S.truffleQtys={};TRUFFLES.forEach(t=>{S.truffleQtys[t.id]=0;});
+  S.pickupDate=null;
+
+  document.querySelectorAll('.sel-card').forEach(b=>b.classList.remove('selected'));
+  g('bt-'+type).classList.add('selected');
+  markDone('s1n');
+  ['s2n','s3n','s4n','s5n'].forEach(id=>g(id).classList.remove('done'));
+  document.querySelectorAll('.date-card').forEach(b=>b.classList.remove('selected'));
+  g('payPanel').classList.add('hidden');
+
+  const cfg=BOX_CFG[type];
+  unlock('step2');g('step2').classList.add('active');
+
+  if(cfg.isCrumb){
+    g('single-picker').classList.add('hidden');
+    g('crumb-picker').classList.remove('hidden');
+    g('crumb-picker').classList.add('show');
+    g('s2t').textContent='Choose Your '+cfg.cookieCount+' Cookies';
+    g('crumb-hint').textContent='Pick '+cfg.cookieCount+' cookies — max 2 of the same flavor.';
+    g('crumbCount').textContent='0 / '+cfg.cookieCount;
+    renderCrumbRows();
+    lock('step3');lock('step4');lock('step5');
+    g('step3').classList.add('hidden');
+    g('step4').classList.add('hidden');
+  } else {
+    g('single-picker').classList.remove('hidden');
+    g('crumb-picker').classList.remove('show');
+    g('crumb-picker').classList.add('hidden');
+    const cc=cfg.cookieCount;
+    g('s2t').textContent=cc===1?'Select Your Cookie':'Select Your '+cc+' Cookies';
+    g('single-hint').textContent='Choose '+cc+' cookie'+(cc>1?'s':'')+' for your box.';
+    g('ckDisplay').classList.remove('show');
+    renderCookieGrid();
+    lock('step3');lock('step4');lock('step5');
+    g('step3').classList.remove('hidden');
+    g('step4').classList.remove('hidden');
+    S.chocoAdded=[];
+    CHOCOLATES.forEach(ch=>{
+      const btn=g('ch-add-'+ch.id);
+      if(btn){btn.textContent='Add to Box';btn.className='choco-add-btn';}
+      const card=g('ch-card-'+ch.id);
+      if(card)card.classList.remove('selected-choco');
+    });
+    TRUFFLES.forEach(t=>{
+      S.truffleQtys[t.id]=0;
+      const n=g('tq-'+t.id);if(n)n.textContent='0';
+      const c=g('tc-'+t.id);if(c)c.classList.remove('selected');
+      const m=g('tm-'+t.id);if(m)m.disabled=true;
+      const p=g('tp-'+t.id);if(p)p.disabled=false;
+    });
+    g('choco-hint').textContent='Select '+cfg.chocoCount+' chocolate bars for your box.';
+    g('truffle-hint').textContent='Choose '+cfg.truffleCount+' truffle flavors. Max 2 of each.';
+    g('s4t').textContent='Select Your Truffle Flavors ('+cfg.truffleCount+')';
+  }
+  cfg.isPremium?g('premNote').classList.remove('hidden'):g('premNote').classList.add('hidden');
+  updateSummary();
+  toast('Box selected! ✦');
+}
+
+/* COOKIE GRID */
+function renderCookieGrid(){
+  const gEl=g('cookieGrid');if(!gEl)return;
+  gEl.innerHTML=COOKIES.map(c=>`
+    <button class="cookie-btn" onclick="toggleCookie('${c.id}')" id="ck-${c.id}">
+      <span class="cb-e">${c.emoji}</span>
+      <span class="cb-i"><span class="cb-n">${c.name}</span><span class="cb-d">${c.desc}</span><span class="cb-p">$${c.price.toLocaleString()} JMD</span></span>
+      <span class="cbck">✓</span>
+    </button>`).join('');
+}
+
+function toggleCookie(id){
+  if(!S.boxType)return;
+  const cfg=BOX_CFG[S.boxType];const max=cfg.cookieCount;
+  const idx=S.selectedCookies.indexOf(id);
+  if(idx>-1){S.selectedCookies.splice(idx,1);}
+  else{
+    if(S.selectedCookies.length>=max){
+      if(max===1)S.selectedCookies=[id];
+      else{toast('Max '+max+' cookies for this box!');return;}
+    }else{S.selectedCookies.push(id);}
+  }
+  COOKIES.forEach(c=>{const btn=g('ck-'+c.id);if(btn)btn.classList.toggle('selected',S.selectedCookies.includes(c.id));});
+  const disp=g('ckDisplay');
+  if(S.selectedCookies.length>0){
+    disp.classList.add('show');
+    const last=COOKIES.find(x=>x.id===S.selectedCookies[S.selectedCookies.length-1]);
+    g('ckdE').textContent=last.emoji;
+    g('ckdN').textContent=S.selectedCookies.length>1?S.selectedCookies.length+' cookies selected':last.name;
+    g('ckdS').textContent=S.selectedCookies.length>1?'Multiple selection':'Selected Cookie';
+    g('ckdP').textContent='$'+S.selectedCookies.reduce((s,cid)=>{const f=COOKIES.find(x=>x.id===cid);return s+(f?f.price:0);},0).toLocaleString()+' JMD';
+  }else{disp.classList.remove('show');}
+  if(S.selectedCookies.length===max){markDone('s2n');unlock('step3');toast(max===1?'Cookie selected! 🍪':max+' cookies selected! 🍪');}
+  else{g('s2n').classList.remove('done');lock('step3');}
+  updateSummary();
+}
+
+/* CRUMB ROWS */
+function renderCrumbRows(){
+  const cont=g('crumbRows');if(!cont)return;
+  cont.innerHTML=COOKIES.map(c=>`
+    <div class="crumb-row" id="cr-${c.id}">
+      <span class="cr-e">${c.emoji}</span>
+      <div class="cr-i"><span class="cr-n">${c.name}</span><span class="cr-p">$${c.price.toLocaleString()} JMD</span></div>
+      <div class="qty-ctrl">
+        <button class="qty-btn" onclick="changeCrumb('${c.id}',-1)" id="cm-${c.id}" disabled>−</button>
+        <span class="qty-num" id="cq-${c.id}">0</span>
+        <button class="qty-btn" onclick="changeCrumb('${c.id}',1)" id="cp-${c.id}">+</button>
+      </div>
+    </div>`).join('');
+}
+
+function changeCrumb(id,delta){
+  const cfg=BOX_CFG[S.boxType];const max=cfg.cookieCount;
+  const tot=Object.values(S.crumbQtys).reduce((a,b)=>a+b,0);
+  const cur=S.crumbQtys[id]||0;const nv=cur+delta;
+  if(nv<0)return;
+  if(nv>2){toast('Max 2 of the same flavor!');return;}
+  if(delta>0&&tot>=max){toast('Box full! '+max+' cookies max.');return;}
+  S.crumbQtys[id]=nv;
+  g('cq-'+id).textContent=nv;
+  g('cm-'+id).disabled=nv<=0;
+  const row=g('cr-'+id);if(row)row.classList.toggle('has-qty',nv>0);
+  const nt=Object.values(S.crumbQtys).reduce((a,b)=>a+b,0);
+  g('crumbCount').textContent=nt+' / '+max;
+  COOKIES.forEach(c=>{const p=g('cp-'+c.id);if(p)p.disabled=nt>=max||S.crumbQtys[c.id]>=2;});
+  if(nt===max){markDone('s2n');unlock('step5');toast(max+' cookies selected! 🍪');}
+  else{g('s2n').classList.remove('done');lock('step5');}
+  updateSummary();
+}
+
+/* CHOCO GRID */
+function renderChocoGrid(){
+  const gEl=g('chocoGrid');if(!gEl)return;
+  gEl.innerHTML=CHOCOLATES.map(ch=>`
+    <div class="choco-card" id="ch-card-${ch.id}">
+      <div class="choco-top">
+        <span class="ch-e">${ch.emoji}</span>
+        <div class="ch-i">
+          <span class="ch-n">${ch.name}</span>
+          <span class="ch-l">Included in your box</span>
+          <span class="ch-d">${ch.desc}</span>
+          ${ch.variation?`<span class="ch-v">💡 ${ch.variation}</span>`:''}
+          <span class="ch-a">${ch.allergens.map(bdg).join(' ')}</span>
+        </div>
+      </div>
+      ${ch.allergens.includes('nuts')?`
+      <div class="nuts-tgl">
+        <span class="nuts-lbl">🥜 Nuts preference for this bar?</span>
+        <div class="nuts-btns">
+          <button class="nuts-opt nuts-yes" id="ny-${ch.id}" onclick="setNuts('${ch.id}',true)">✓ Include nuts</button>
+          <button class="nuts-opt" id="nn-${ch.id}" onclick="setNuts('${ch.id}',false)">✗ No nuts please</button>
+        </div>
+      </div>`:''}
+      <div class="choco-add-bar">
+        <button class="choco-add-btn" id="ch-add-${ch.id}" onclick="addChoco('${ch.id}')">Add to Box</button>
+      </div>
+    </div>`).join('');
+}
+
+function setNuts(id,withNuts){
+  S.nutsPrefs[id]=withNuts;
+  g('ny-'+id).className='nuts-opt'+(withNuts?' nuts-yes':'');
+  g('nn-'+id).className='nuts-opt'+(!withNuts?' nuts-no':'');
+  updateSummary();
+}
+
+function addChoco(id){
+  if(!S.boxType)return;
+  const cfg=BOX_CFG[S.boxType];const max=cfg.chocoCount;
+  const idx=S.chocoAdded.indexOf(id);
+  if(idx>-1){
+    S.chocoAdded.splice(idx,1);
+    const btn=g('ch-add-'+id);btn.textContent='Add to Box';btn.className='choco-add-btn';
+    g('ch-card-'+id).classList.remove('selected-choco');
+  }else{
+    if(S.chocoAdded.length>=max){toast('Max '+max+' chocolate bars for this box!');return;}
+    S.chocoAdded.push(id);
+    const btn=g('ch-add-'+id);btn.textContent='✓ Added!';btn.className='choco-add-btn added';
+    g('ch-card-'+id).classList.add('selected-choco');
+  }
+  if(S.chocoAdded.length===max){markDone('s3n');unlock('step4');toast('Both chocolate bars chosen! 🍫');}
+  else{g('s3n').classList.remove('done');lock('step4');}
+  updateSummary();
+}
+
+/* TRUFFLE GRID */
+function renderTruffleGrid(){
+  const gEl=g('truffleGrid');if(!gEl)return;
+  gEl.innerHTML=TRUFFLES.map(t=>`
+    <div class="truffle-card" id="tc-${t.id}">
+      <span class="tfe">${t.emoji}</span>
+      <div class="tfb">
+        <span class="tfn">${t.name}</span>
+        <span class="tfd">${t.desc}</span>
+        <span class="tfa">${t.allergens.map(bdg).join(' ')}</span>
+      </div>
+      <div class="tf-ctrl">
+        <button class="qty-btn" onclick="changeTruffle('${t.id}',-1)" id="tm-${t.id}" disabled>−</button>
+        <span class="qty-num" id="tq-${t.id}">0</span>
+        <button class="qty-btn" onclick="changeTruffle('${t.id}',1)" id="tp-${t.id}">+</button>
+      </div>
+    </div>`).join('');
+}
+
+function changeTruffle(id,delta){
+  if(!S.boxType)return;
+  const cfg=BOX_CFG[S.boxType];const max=cfg.truffleCount;
+  const tot=Object.values(S.truffleQtys).reduce((a,b)=>a+b,0);
+  const cur=S.truffleQtys[id]||0;const nv=cur+delta;
+  if(nv<0)return;
+  if(nv>2){toast('Max 2 of the same truffle!');return;}
+  if(delta>0&&tot>=max){toast('Max '+max+' truffles for this box!');return;}
+  S.truffleQtys[id]=nv;
+  g('tq-'+id).textContent=nv;
+  g('tm-'+id).disabled=nv<=0;
+  g('tc-'+id).classList.toggle('selected',nv>0);
+  const nt=Object.values(S.truffleQtys).reduce((a,b)=>a+b,0);
+  TRUFFLES.forEach(t=>{const p=g('tp-'+t.id);if(p)p.disabled=nt>=max||S.truffleQtys[t.id]>=2;});
+  if(nt===max){markDone('s4n');unlock('step5');toast(max+' truffles selected! ✦');}
+  else{g('s4n').classList.remove('done');lock('step5');}
+  updateSummary();
+}
+
+/* DATE */
+function pickDate(d){
+  S.pickupDate=d;
+  document.querySelectorAll('.date-card').forEach(b=>b.classList.remove('selected'));
+  g('d-'+d.replace(' ','')).classList.add('selected');
+  markDone('s5n');
+  updateSummary();
+}
+
+/* SUMMARY */
+function updateSummary(){
+  const bt=S.boxType;
+  if(!bt){g('checkoutBtn').disabled=true;return;}
+  const cfg=BOX_CFG[bt];
+  g('sumBox').textContent=cfg.label;
+
+  let cookiePrice=0;
+  if(cfg.isCrumb){
+    const picks=COOKIES.filter(c=>S.crumbQtys[c.id]>0);
+    g('sumCookie').textContent=picks.length?picks.map(c=>c.emoji+'×'+S.crumbQtys[c.id]).join(' '):'—';
+    cookiePrice=COOKIES.reduce((s,c)=>s+(S.crumbQtys[c.id]*c.price),0);
+    g('sumChocoLn').classList.add('hidden');g('sumTruffleLn').classList.add('hidden');
+  }else{
+    const names=S.selectedCookies.map(id=>{const c=COOKIES.find(x=>x.id===id);return c?c.name:'';}).join(', ');
+    g('sumCookie').textContent=names||'—';
+    cookiePrice=S.selectedCookies.reduce((s,id)=>{const c=COOKIES.find(x=>x.id===id);return s+(c?c.price:0);},0);
+    g('sumChocoLn').classList.remove('hidden');g('sumTruffleLn').classList.remove('hidden');
+    const chn=S.chocoAdded.map(id=>{const ch=CHOCOLATES.find(x=>x.id===id);if(!ch)return '';const nn=ch.allergens.includes('nuts')?(S.nutsPrefs[ch.id]?' (with nuts)':' (nut-free)'):'';return ch.name+nn;}).join(', ');
+    g('sumChoco').textContent=chn||'—';
+    const tt=Object.values(S.truffleQtys).reduce((a,b)=>a+b,0);
+    g('sumTruffle').textContent=tt>0?TRUFFLES.filter(t=>S.truffleQtys[t.id]>0).map(t=>t.name+(S.truffleQtys[t.id]>1?' ×'+S.truffleQtys[t.id]:'')).join(', '):'—';
+  }
+  g('sumDate').textContent=S.pickupDate||'—';
+  let total=cfg.basePrice+cookiePrice;
+  if(cfg.discount)total=Math.round(total*(1-cfg.discount));
+  S.total=total;
+  g('sumTotal').textContent='$'+total.toLocaleString()+' JMD';
+  const dep=Math.ceil(total*0.5);
+  g('depAmt').textContent='$'+dep.toLocaleString()+' JMD';
+
+  let ready=false;
+  if(cfg.isCrumb){ready=Object.values(S.crumbQtys).reduce((a,b)=>a+b,0)===cfg.cookieCount&&!!S.pickupDate;}
+  else{const tt=Object.values(S.truffleQtys).reduce((a,b)=>a+b,0);ready=S.selectedCookies.length===cfg.cookieCount&&S.chocoAdded.length===cfg.chocoCount&&tt===cfg.truffleCount&&!!S.pickupDate;}
+  g('checkoutBtn').disabled=!ready;
+}
+
+/* PAYMENT */
+function openPay(){
+  const pp=g('payPanel');pp.classList.remove('hidden');
+  S.payMethod=null;
+  g('payBank').classList.remove('selected');g('payWipay').classList.remove('selected');
+  g('bankDetail').classList.add('hidden');g('wipayDetail').classList.add('hidden');
+  setTimeout(()=>pp.scrollIntoView({behavior:'smooth',block:'start'}),80);
+}
+
+function choosePay(m){
+  S.payMethod=m;
+  g('payBank').classList.toggle('selected',m==='bank');
+  g('payWipay').classList.toggle('selected',m==='wipay');
+  const dep='$'+Math.ceil(S.total*0.5).toLocaleString()+' JMD';
+  if(m==='bank'){g('bankDetail').classList.remove('hidden');g('wipayDetail').classList.add('hidden');g('bankAmt').textContent=dep;}
+  else{g('wipayDetail').classList.remove('hidden');g('bankDetail').classList.add('hidden');g('wipayAmt').textContent=dep;}
+}
+
+function buildMsg(){
+  const bt=S.boxType;const cfg=BOX_CFG[bt];
+  const dep=Math.ceil(S.total*0.5);
+  const gift=g('giftMsg').value.trim();
+  const lines=['🍪 *Treats by Seteisha Pre-Order*','Box: '+cfg.label];
+  if(cfg.isCrumb){lines.push('Cookies: '+COOKIES.filter(c=>S.crumbQtys[c.id]>0).map(c=>c.name+' ×'+S.crumbQtys[c.id]).join(', '));}
+  else{
+    lines.push('Cookies: '+S.selectedCookies.map(id=>{const c=COOKIES.find(x=>x.id===id);return c?c.name:'';}).join(', '));
+    lines.push('Chocolate Bars: '+S.chocoAdded.map(id=>{const ch=CHOCOLATES.find(x=>x.id===id);if(!ch)return '';const nn=ch.allergens.includes('nuts')?(S.nutsPrefs[ch.id]?' (with nuts)':' (nut-free)'):'';return ch.name+nn;}).join(', '));
+    lines.push('Truffles: '+TRUFFLES.filter(t=>S.truffleQtys[t.id]>0).map(t=>t.name+(S.truffleQtys[t.id]>1?' ×'+S.truffleQtys[t.id]:'')).join(', '));
+  }
+  lines.push('Pickup: '+S.pickupDate);
+  lines.push('Total: $'+S.total.toLocaleString()+' JMD');
+  lines.push('Deposit: $'+dep.toLocaleString()+' JMD');
+  lines.push('Payment: '+(S.payMethod==='bank'?'Bank Transfer':'WiPay Card'));
+  if(gift)lines.push('Gift Message: "'+gift+'"');
+  lines.push('\nPlease confirm my pre-order! 🙏');
+  return lines.join('\n');
+}
+
+function sendWA(){
+  window.open('https://wa.me/16582033013?text='+encodeURIComponent(buildMsg()),'_blank');
+  setTimeout(()=>g('modal').classList.add('show'),700);
+}
+
+function closeModal(){g('modal').classList.remove('show');}
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+
+init();
+</script>
+</body>
+</html>
