@@ -17,6 +17,55 @@
   --text: #2A1205;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+/* CUSTOMER NAME */
+.name-field{margin-bottom:16px;}
+.name-field label{display:block;font-size:13px;font-weight:600;color:var(--brown);margin-bottom:7px;}
+.name-input{width:100%;border:2px solid rgba(59,30,8,.1);border-radius:12px;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--brown);background:#fff;transition:border-color .2s;}
+.name-input:focus{outline:none;border-color:var(--pink);}
+
+/* CART BUTTON IN NAV */
+.cart-nav-btn{position:relative;background:var(--brown);color:#fff;border:none;border-radius:100px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:7px;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.cart-nav-btn:hover{background:#2a1406;transform:translateY(-1px);}
+.cart-badge{background:var(--pink);color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;line-height:1;}
+
+/* ADD TO CART BUTTON */
+.btn-add-cart{background:var(--brown);color:#fff;width:100%;padding:15px;border-radius:14px;font-size:15px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;margin-top:12px;}
+.btn-add-cart:hover{background:#2a1406;transform:translateY(-1px);box-shadow:0 6px 20px rgba(59,30,8,.2);}
+.btn-add-cart:disabled{background:rgba(59,30,8,.12);color:rgba(59,30,8,.35);transform:none;box-shadow:none;cursor:not-allowed;}
+
+/* CART DRAWER */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s;}
+.cart-overlay.open{opacity:1;pointer-events:all;}
+.cart-drawer{position:fixed;right:0;top:0;bottom:0;width:min(420px,100vw);background:var(--cream);z-index:501;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(59,30,8,.15);}
+.cart-overlay.open .cart-drawer{transform:translateX(0);}
+.cart-drawer-head{background:var(--brown);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.cart-drawer-head h3{font-family:'Playfair Display',serif;font-size:20px;color:#fff;}
+.cart-drawer-head span{color:var(--gold);font-size:13px;}
+.cart-close{background:rgba(255,255,255,.12);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.cart-close:hover{background:rgba(255,255,255,.22);}
+.cart-items{flex:1;overflow-y:auto;padding:16px;}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--muted);}
+.cart-empty .ce-emoji{font-size:48px;display:block;margin-bottom:12px;}
+.cart-empty p{font-size:14px;line-height:1.6;}
+.cart-item{background:#fff;border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:0 2px 10px rgba(59,30,8,.05);position:relative;}
+.ci-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px;}
+.ci-label{font-family:'Playfair Display',serif;font-size:14px;color:var(--brown);font-weight:700;}
+.ci-price{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--pink);flex-shrink:0;}
+.ci-detail{font-size:11px;color:var(--muted);line-height:1.5;}
+.ci-remove{position:absolute;top:10px;right:10px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:2px 6px;border-radius:6px;transition:all .15s;}
+.ci-remove:hover{background:var(--light-pink);color:var(--pink);}
+.cart-footer{background:#fff;border-top:1px solid rgba(59,30,8,.07);padding:20px 24px;flex-shrink:0;}
+.cart-totals{margin-bottom:16px;}
+.ct-row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);padding:4px 0;}
+.ct-row.grand{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--brown);border-top:1px solid rgba(59,30,8,.08);padding-top:10px;margin-top:6px;}
+.ct-row.grand span:last-child{color:var(--pink);}
+.ct-row.dep{font-size:13px;font-weight:700;color:var(--brown);}
+.ct-row.dep span:last-child{color:var(--pink);}
+.cart-checkout-btn{background:var(--pink);color:#fff;width:100%;padding:15px;border-radius:14px;font-size:15px;font-weight:700;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.cart-checkout-btn:hover{background:var(--dark-pink);transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,84,122,.28);}
+.cart-checkout-btn:disabled{background:rgba(59,30,8,.12);color:rgba(59,30,8,.35);transform:none;box-shadow:none;cursor:not-allowed;}
+.cart-note{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;line-height:1.5;}
+
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(212,168,67,.11) 1px,transparent 1px),radial-gradient(circle,rgba(232,84,122,.07) 1px,transparent 1px);background-size:40px 40px,67px 67px;background-position:0 0,20px 20px;pointer-events:none;z-index:0;}
@@ -339,6 +388,7 @@ footer{background:var(--brown);color:rgba(255,255,255,.55);padding:56px 48px 36p
     <li><a href="#boxes">The Boxes</a></li>
     <li><a href="#builder">Box Builder</a></li>
     <li><a href="#builder" class="nav-pill">Pre-Order Now</a></li>
+    <li><button class="cart-nav-btn" onclick="openCart()">🛒 Cart <span class="cart-badge" id="cartBadge">0</span></button></li>
   </ul>
 </nav>
 
@@ -518,6 +568,10 @@ footer{background:var(--brown);color:rgba(255,255,255,.55);padding:56px 48px 36p
   <!-- STEP 5 -->
   <div class="step step-locked" id="step5">
     <div class="step-header"><div class="step-num" id="s5n">5</div><h3>Pickup Details</h3></div>
+    <div class="name-field">
+      <label for="custName">👤 Your Name <span style="color:var(--pink)">*</span></label>
+      <input class="name-input" type="text" id="custName" placeholder="e.g. Marcia Brown" oninput="updateSummary()">
+    </div>
     <div class="addr-box">
       <span class="addr-icon">📍</span>
       <div class="addr-text"><strong>Pickup Location</strong>13a Caledonia Rd, Mandeville, Jamaica</div>
@@ -559,7 +613,8 @@ footer{background:var(--brown);color:rgba(255,255,255,.55);padding:56px 48px 36p
     <div class="sum-ln total"><span>Total</span><span id="sumTotal">$0 JMD</span></div>
     <div class="dep-strip"><span class="dl">50% Deposit Due Now</span><span class="da" id="depAmt">$0 JMD</span></div>
     <p class="dep-note">Remaining 50% is due at pickup. Order only confirmed once we receive your deposit and WhatsApp you confirmation.</p>
-    <button class="btn btn-checkout" onclick="openPay()" id="checkoutBtn" disabled>View Payment Details →</button>
+    <button class="btn-add-cart" onclick="addToCart()" id="addCartBtn" disabled>＋ Add to Cart</button>
+    <button class="btn btn-checkout" onclick="openPay()" id="checkoutBtn" style="margin-top:10px;" disabled>View Payment Details →</button>
   </div>
 
   <!-- PAYMENT PANEL -->
@@ -582,6 +637,45 @@ footer{background:var(--brown);color:rgba(255,255,255,.55);padding:56px 48px 36p
     </div>
   </div>
 </section>
+
+
+<!-- CART OVERLAY + DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()">
+  <div class="cart-drawer" onclick="event.stopPropagation()">
+    <div class="cart-drawer-head">
+      <h3>🛒 Your Cart</h3>
+      <span id="cartItemCount">0 items</span>
+      <button class="cart-close" onclick="closeCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <span class="ce-emoji">🍪</span>
+        <p>Your cart is empty.<br>Build a box and add it here!</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-totals" id="cartTotals">
+        <div class="ct-row grand"><span>Grand Total</span><span id="cartGrandTotal">$0 JMD</span></div>
+        <div class="ct-row dep"><span>Total Deposit (50%)</span><span id="cartDeposit">$0 JMD</span></div>
+      </div>
+      <button class="cart-checkout-btn" id="cartCheckoutBtn" onclick="cartCheckout()" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Send Full Order via WhatsApp
+      </button>
+      <p class="cart-note">After sending, transfer your total deposit to FGB Mandeville · Seteisha Hall · 990848754016</p>
+    </div>
+  </div>
+</div>
+
+<!-- CART PAYMENT MODAL (bank details for cart checkout) -->
+<div class="modal-ov" id="cartPayModal">
+  <div class="modal">
+    <div class="me">🏦</div>
+    <h3>Almost done!</h3>
+    <p id="cartPayText">Your full order has been sent to WhatsApp. Please transfer your total deposit to:<br><br><strong>Seteisha Hall · FGB Mandeville</strong><br>Savings · 990848754016<br><br>Your orders are confirmed once we receive and verify your deposit.</p>
+    <button class="btn-modal" onclick="closeCartPayModal()">Got it! 🍪</button>
+  </div>
+</div>
 
 <footer>
   <div class="ft-top">
@@ -624,6 +718,7 @@ footer{background:var(--brown);color:rgba(255,255,255,.55);padding:56px 48px 36p
 <script>
 'use strict';
 
+/* ── DATA ── */
 const COOKIES=[
   {id:'strawberry',name:'Strawberry Cheesecake Cookie',price:800,emoji:'🍓',category:'premium',desc:'Chunky cookie with strawberry pieces and a rich cream cheese center.'},
   {id:'rocky',name:'Rocky Road Cookie',price:750,emoji:'🍫',category:'premium',desc:'Packed with caramel chunks, nuts, vegan marshmallows, and mini M&Ms.'},
@@ -632,12 +727,10 @@ const COOKIES=[
   {id:'redvelvet',name:'Red Velvet Oreo Cookie',price:650,emoji:'❤️',category:'standard',desc:'Red velvet with white chocolate chunks and Oreo pieces.'},
   {id:'oatmeal',name:'Classic Chewy Oatmeal Raisin',price:500,emoji:'🌾',category:'standard',desc:'Traditional chewy oatmeal cookie with raisins.'},
 ];
-
 const CHOCOLATES=[
   {id:'white_luxe',name:'White Chocolate Luxe Bar',emoji:'🍫',desc:'Creamy white chocolate with cashews, pistachios, yogurt-covered cranberries, strawberry powder, and vanilla Oreo chunks.',variation:'Can be made without nuts for a lighter nut-free profile.',allergens:['dairy','nuts']},
   {id:'fruit_nut',name:'Milk Chocolate Fruit & Nut Gold Bar',emoji:'✨',desc:'Smooth milk chocolate with dried fruits, roasted nuts, and yogurt-covered cranberries, finished with edible gold dust.',variation:null,allergens:['dairy','nuts']},
 ];
-
 const TRUFFLES=[
   {id:'caramel_crunch',name:'Caramel Crunch Dome',emoji:'🍯',allergens:['dairy'],desc:'Milk chocolate shell with soft caramel center and crisp rice crunch.'},
   {id:'classic_caramel',name:'Classic Caramel Square',emoji:'🥛',allergens:['dairy'],desc:'White chocolate shell with a smooth, silky caramel filling.'},
@@ -651,7 +744,6 @@ const TRUFFLES=[
   {id:'neapolitan',name:'Neapolitan Gold Wafer Truffle 👑',emoji:'👑',allergens:['dairy','gluten','nuts'],desc:'Layered chocolate, strawberry, and vanilla wafer, enrobed in white chocolate with fluid gold dust. Signature Piece.'},
 ];
 
-// Premium surcharge applies only in treat boxes
 function premiumSurcharge(c){if(c.price===750)return 100;if(c.price===800)return 150;return 0;}
 
 const BOX_CFG={
@@ -661,8 +753,18 @@ const BOX_CFG={
   premium:{cookieCount:3,chocoCount:2,truffleCount:9,basePrice:6500,discount:0,isCrumb:false,isPremium:true,label:'Premium Treat Box'},
 };
 
+/* ── BUILDER STATE ── */
 let S={boxType:null,crumbQtys:{},selectedCookies:[],chocoAdded:[],nutsPrefs:{},truffleQtys:{},pickupDate:null,total:0,payMethod:null,greetingCard:false};
 
+/* ── CART STATE ── */
+let CART=[];   // array of order snapshots
+let cartOpen=false;
+
+/* ── GOOGLE SHEETS ENDPOINT ── */
+// Replace this URL with your deployed Google Apps Script Web App URL
+const SHEETS_URL='https://script.google.com/macros/s/AKfycby66PExtyERCqPwz0eDDm0N4lP-EcNmWKQVAqCDESw9gW-EWAuI9U5AScUvE2-JTYv6MA/exec';
+
+/* ── HELPERS ── */
 function g(id){return document.getElementById(id);}
 function bdg(t){const m={dairy:'🥛 Dairy',nuts:'🥜 Nuts',gluten:'🌾 Gluten'};return '<span class="bdg bdg-'+t+'">'+(m[t]||t)+'</span>';}
 function toast(msg){const el=g('toast');el.textContent=msg;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('show'),2600);}
@@ -673,13 +775,16 @@ function lock(id){g(id).classList.add('step-locked');}
 function premCountList(list){return list.reduce((n,id)=>{const c=COOKIES.find(x=>x.id===id);return n+(c&&c.category==='premium'?1:0);},0);}
 function premCountCrumb(){return COOKIES.reduce((n,c)=>n+(c.category==='premium'?(S.crumbQtys[c.id]||0):0),0);}
 
+/* ── INIT ── */
 function init(){
   renderChocoGrid();renderTruffleGrid();
   COOKIES.forEach(c=>{S.crumbQtys[c.id]=0;});
   CHOCOLATES.forEach(ch=>{if(ch.allergens.includes('nuts'))S.nutsPrefs[ch.id]=true;});
   TRUFFLES.forEach(t=>{S.truffleQtys[t.id]=0;});
+  renderCart();
 }
 
+/* ── SELECT BOX ── */
 function selectBox(type){
   S.boxType=type;
   S.crumbQtys={};COOKIES.forEach(c=>{S.crumbQtys[c.id]=0;});
@@ -698,7 +803,7 @@ function selectBox(type){
     g('single-picker').classList.add('hidden');
     g('crumb-picker').classList.remove('hidden');g('crumb-picker').classList.add('show');
     g('s2t').textContent='Choose Your '+cfg.cookieCount+' Cookies';
-    g('crumb-hint').textContent='Pick '+cfg.cookieCount+' cookies. Max 2 premium cookies ($750 or $800) per box.';
+    g('crumb-hint').textContent='Pick '+cfg.cookieCount+' cookies. Max 2 premium ($750 or $800) per box.';
     g('crumbCount').textContent='0 / '+cfg.cookieCount;
     renderCrumbRows();
     lock('step3');lock('step4');lock('step5');
@@ -738,6 +843,7 @@ function selectBox(type){
   updateSummary();toast('Box selected! ✦');
 }
 
+/* ── COOKIE GRID ── */
 function renderCookieGrid(){
   const gEl=g('cookieGrid');if(!gEl)return;
   gEl.innerHTML=COOKIES.map(c=>{
@@ -780,6 +886,7 @@ function toggleCookie(id){
   updateSummary();
 }
 
+/* ── CRUMB ROWS ── */
 function renderCrumbRows(){
   const cont=g('crumbRows');if(!cont)return;
   cont.innerHTML=COOKIES.map(c=>{
@@ -804,8 +911,7 @@ function changeCrumb(id,delta){
   if(delta>0&&tot>=max){toast('Box full! '+max+' cookies max.');return;}
   if(delta>0&&cookie.category==='premium'&&premCountCrumb()>=2){toast('Max 2 premium cookies per box!');return;}
   S.crumbQtys[id]=nv;
-  g('cq-'+id).textContent=nv;
-  g('cm-'+id).disabled=nv<=0;
+  g('cq-'+id).textContent=nv;g('cm-'+id).disabled=nv<=0;
   const row=g('cr-'+id);if(row)row.classList.toggle('has-qty',nv>0);
   const nt=Object.values(S.crumbQtys).reduce((a,b)=>a+b,0);
   g('crumbCount').textContent=nt+' / '+max;
@@ -819,6 +925,7 @@ function changeCrumb(id,delta){
   updateSummary();
 }
 
+/* ── CHOCO GRID ── */
 function renderChocoGrid(){
   const gEl=g('chocoGrid');if(!gEl)return;
   gEl.innerHTML=CHOCOLATES.map(ch=>`
@@ -830,7 +937,7 @@ function renderChocoGrid(){
           <span class="ch-a">${ch.allergens.map(bdg).join(' ')}</span>
         </div>
       </div>
-      ${ch.allergens.includes('nuts')?`<div class="nuts-tgl"><span class="nuts-lbl">🥜 Nuts preference for this bar?</span>
+      ${ch.allergens.includes('nuts')?`<div class="nuts-tgl"><span class="nuts-lbl">🥜 Nuts preference?</span>
         <div class="nuts-btns">
           <button class="nuts-opt nuts-yes" id="ny-${ch.id}" onclick="setNuts('${ch.id}',true)">✓ Include nuts</button>
           <button class="nuts-opt" id="nn-${ch.id}" onclick="setNuts('${ch.id}',false)">✗ No nuts please</button>
@@ -865,6 +972,7 @@ function addChoco(id){
   updateSummary();
 }
 
+/* ── TRUFFLE GRID ── */
 function renderTruffleGrid(){
   const gEl=g('truffleGrid');if(!gEl)return;
   gEl.innerHTML=TRUFFLES.map(t=>`
@@ -895,6 +1003,7 @@ function changeTruffle(id,delta){
   updateSummary();
 }
 
+/* ── DATE & CARD ── */
 function pickDate(d){
   S.pickupDate=d;
   document.querySelectorAll('.date-card').forEach(b=>b.classList.remove('selected'));
@@ -906,55 +1015,46 @@ function setCard(selected){
   S.greetingCard=selected;
   g('cardYes').className='nuts-opt'+(selected?' nuts-yes':'');
   g('cardNo').className='nuts-opt'+(!selected?' nuts-no':'');
-  // show message field only when card selected for cookie boxes
   const cfg=BOX_CFG[S.boxType];
-  if(cfg&&cfg.isCrumb){
-    selected?g('msgWrap').classList.remove('hidden'):g('msgWrap').classList.add('hidden');
-  }
+  if(cfg&&cfg.isCrumb){selected?g('msgWrap').classList.remove('hidden'):g('msgWrap').classList.add('hidden');}
   updateSummary();
 }
 
+/* ── UPDATE SUMMARY ── */
 function updateSummary(){
   const bt=S.boxType;
-  if(!bt){g('checkoutBtn').disabled=true;return;}
+  if(!bt){g('checkoutBtn').disabled=true;g('addCartBtn').disabled=true;return;}
   const cfg=BOX_CFG[bt];
   g('sumBox').textContent=cfg.label;
 
   let total=0,surcharge=0,discountAmt=0;
 
   if(cfg.isCrumb){
-    // COOKIE BOX: full cookie prices + optional card
     const picks=COOKIES.filter(c=>S.crumbQtys[c.id]>0);
     g('sumCookie').textContent=picks.length?picks.map(c=>c.emoji+'×'+S.crumbQtys[c.id]).join(' '):'—';
-    let cookieSubtotal=COOKIES.reduce((s,c)=>s+(S.crumbQtys[c.id]*c.price),0);
-    if(cfg.discount){discountAmt=Math.round(cookieSubtotal*cfg.discount);cookieSubtotal-=discountAmt;}
-    total=cookieSubtotal+(S.greetingCard?500:0);
-    g('sumChocoLn').classList.add('hidden');g('sumTruffleLn').classList.add('hidden');
-    g('sumSurchargeLn').classList.add('hidden');
+    let sub=COOKIES.reduce((s,c)=>s+(S.crumbQtys[c.id]*c.price),0);
+    if(cfg.discount){discountAmt=Math.round(sub*cfg.discount);sub-=discountAmt;}
+    total=sub+(S.greetingCard?500:0);
+    g('sumChocoLn').classList.add('hidden');g('sumTruffleLn').classList.add('hidden');g('sumSurchargeLn').classList.add('hidden');
   }else{
-    // TREAT BOX: fixed base + ONLY premium upgrade fees (never full cookie prices)
     g('sumCookie').textContent=S.selectedCookies.map(id=>{const c=COOKIES.find(x=>x.id===id);return c?c.name:'';}).join(', ')||'—';
     surcharge=S.selectedCookies.reduce((s,id)=>{const c=COOKIES.find(x=>x.id===id);return s+(c?premiumSurcharge(c):0);},0);
-    total=cfg.basePrice+surcharge; // NO cookie prices added — only surcharges
+    total=cfg.basePrice+surcharge;
     g('sumChocoLn').classList.remove('hidden');g('sumTruffleLn').classList.remove('hidden');
     const chn=S.chocoAdded.map(id=>{const ch=CHOCOLATES.find(x=>x.id===id);if(!ch)return '';const nn=ch.allergens.includes('nuts')?(S.nutsPrefs[ch.id]?' (with nuts)':' (nut-free)'):'';return ch.name+nn;}).join(', ');
     g('sumChoco').textContent=chn||'—';
     const tt=Object.values(S.truffleQtys).reduce((a,b)=>a+b,0);
     g('sumTruffle').textContent=tt>0?TRUFFLES.filter(t=>S.truffleQtys[t.id]>0).map(t=>t.name+(S.truffleQtys[t.id]>1?' ×'+S.truffleQtys[t.id]:'')).join(', '):'—';
-    // greeting card is included free in treat boxes
     g('sumCardLn').classList.add('hidden');
   }
 
   g('sumDate').textContent=S.pickupDate||'—';
   S.total=total;
 
-  // surcharge line (treat boxes only)
   const sl=g('sumSurchargeLn');
   if(sl){!cfg.isCrumb&&surcharge>0?(sl.classList.remove('hidden'),g('sumSurcharge').textContent='+$'+surcharge.toLocaleString()+' JMD'):sl.classList.add('hidden');}
-  // discount line (cookie box 6 only)
   const dl=g('sumDiscountLn');
   if(dl){discountAmt>0?(dl.classList.remove('hidden'),g('sumDiscount').textContent='−$'+discountAmt.toLocaleString()+' JMD (10% bundle)'):dl.classList.add('hidden');}
-  // greeting card line (cookie boxes only, when selected)
   const cl=g('sumCardLn');
   if(cl){cfg.isCrumb&&S.greetingCard?cl.classList.remove('hidden'):cl.classList.add('hidden');}
 
@@ -962,11 +1062,181 @@ function updateSummary(){
   g('depAmt').textContent='$'+Math.ceil(total*0.5).toLocaleString()+' JMD';
 
   let ready=false;
-  if(cfg.isCrumb){ready=Object.values(S.crumbQtys).reduce((a,b)=>a+b,0)===cfg.cookieCount&&!!S.pickupDate;}
-  else{const tt=Object.values(S.truffleQtys).reduce((a,b)=>a+b,0);ready=S.selectedCookies.length===cfg.cookieCount&&S.chocoAdded.length===cfg.chocoCount&&tt===cfg.truffleCount&&!!S.pickupDate;}
+  const custName=(g('custName')?g('custName').value.trim():'');
+  if(cfg.isCrumb){ready=Object.values(S.crumbQtys).reduce((a,b)=>a+b,0)===cfg.cookieCount&&!!S.pickupDate&&!!custName;}
+  else{const tt=Object.values(S.truffleQtys).reduce((a,b)=>a+b,0);ready=S.selectedCookies.length===cfg.cookieCount&&S.chocoAdded.length===cfg.chocoCount&&tt===cfg.truffleCount&&!!S.pickupDate&&!!custName;}
   g('checkoutBtn').disabled=!ready;
+  g('addCartBtn').disabled=!ready;
 }
 
+/* ── BUILD ORDER SNAPSHOT ── */
+function buildSnapshot(){
+  const bt=S.boxType;const cfg=BOX_CFG[bt];
+  const custName=g('custName')?g('custName').value.trim():'Customer';
+  const gift=g('giftMsg')?g('giftMsg').value.trim():'';
+  let detail='';
+  if(cfg.isCrumb){
+    detail=COOKIES.filter(c=>S.crumbQtys[c.id]>0).map(c=>c.name+' ×'+S.crumbQtys[c.id]).join(', ');
+  }else{
+    const ckNames=S.selectedCookies.map(id=>{const c=COOKIES.find(x=>x.id===id);if(!c)return '';const s=premiumSurcharge(c);return c.name+(s>0?' (+$'+s+')':'');}).join(', ');
+    const chNames=S.chocoAdded.map(id=>{const ch=CHOCOLATES.find(x=>x.id===id);if(!ch)return '';const nn=ch.allergens.includes('nuts')?(S.nutsPrefs[ch.id]?' (with nuts)':' (nut-free)'):'';return ch.name+nn;}).join(', ');
+    const truffleNames=TRUFFLES.filter(t=>S.truffleQtys[t.id]>0).map(t=>t.name+(S.truffleQtys[t.id]>1?' ×'+S.truffleQtys[t.id]:'')).join(', ');
+    detail='Cookies: '+ckNames+' | Choco: '+chNames+' | Truffles: '+truffleNames;
+  }
+  return {
+    id: Date.now(),
+    customer: custName,
+    boxType: cfg.label,
+    detail: detail,
+    greetingCard: cfg.isCrumb&&S.greetingCard,
+    pickupDate: S.pickupDate,
+    total: S.total,
+    deposit: Math.ceil(S.total*0.5),
+    gift: gift,
+    timestamp: new Date().toLocaleString('en-JM',{timeZone:'America/Jamaica'}),
+  };
+}
+
+/* ── ADD TO CART ── */
+function addToCart(){
+  const snap=buildSnapshot();
+  CART.push(snap);
+  renderCart();
+  toast('Added to cart! 🛒');
+  openCart();
+  // reset builder for next order
+  resetBuilder();
+}
+
+function resetBuilder(){
+  S.boxType=null;S.crumbQtys={};S.selectedCookies=[];S.chocoAdded=[];
+  S.truffleQtys={};S.pickupDate=null;S.total=0;S.greetingCard=false;
+  COOKIES.forEach(c=>{S.crumbQtys[c.id]=0;});
+  TRUFFLES.forEach(t=>{S.truffleQtys[t.id]=0;});
+  document.querySelectorAll('.sel-card').forEach(b=>b.classList.remove('selected'));
+  ['s1n','s2n','s3n','s4n','s5n'].forEach(id=>g(id).classList.remove('done'));
+  ['step2','step3','step4','step5'].forEach(id=>{lock(id);g(id).classList.remove('active');});
+  g('payPanel').classList.add('hidden');
+  if(g('custName'))g('custName').value='';
+  if(g('giftMsg'))g('giftMsg').value='';
+  g('checkoutBtn').disabled=true;g('addCartBtn').disabled=true;
+  g('sumBox').textContent='—';g('sumCookie').textContent='—';
+  g('sumDate').textContent='—';g('sumTotal').textContent='$0 JMD';
+  g('depAmt').textContent='$0 JMD';
+}
+
+/* ── RENDER CART ── */
+function renderCart(){
+  const badge=g('cartBadge');
+  if(badge)badge.textContent=CART.length;
+  const count=g('cartItemCount');
+  if(count)count.textContent=CART.length+' item'+(CART.length!==1?'s':'');
+  const container=g('cartItems');
+  if(!container)return;
+  if(CART.length===0){
+    container.innerHTML='<div class="cart-empty"><span class="ce-emoji">🍪</span><p>Your cart is empty.<br>Build a box and add it here!</p></div>';
+    g('cartCheckoutBtn').disabled=true;
+    g('cartGrandTotal').textContent='$0 JMD';
+    g('cartDeposit').textContent='$0 JMD';
+    return;
+  }
+  container.innerHTML=CART.map((item,i)=>`
+    <div class="cart-item">
+      <button class="ci-remove" onclick="removeFromCart(${i})" title="Remove">✕</button>
+      <div class="ci-top">
+        <div class="ci-label">${item.boxType}</div>
+        <div class="ci-price">$${item.total.toLocaleString()}</div>
+      </div>
+      <div class="ci-detail">
+        <strong>${item.customer}</strong> · Pickup: ${item.pickupDate||'—'}<br>
+        ${item.detail}
+        ${item.greetingCard?' · 💌 Greeting Card (+$500)':''}
+        ${item.gift?' · 🎀 "'+item.gift+'"':''}
+      </div>
+    </div>`).join('');
+
+  const grand=CART.reduce((s,o)=>s+o.total,0);
+  const dep=Math.ceil(grand*0.5);
+  g('cartGrandTotal').textContent='$'+grand.toLocaleString()+' JMD';
+  g('cartDeposit').textContent='$'+dep.toLocaleString()+' JMD';
+  g('cartCheckoutBtn').disabled=false;
+}
+
+function removeFromCart(i){
+  CART.splice(i,1);renderCart();
+  toast('Item removed from cart.');
+}
+
+/* ── CART OPEN/CLOSE ── */
+function openCart(){g('cartOverlay').classList.add('open');}
+function closeCart(){g('cartOverlay').classList.remove('open');}
+
+/* ── CART CHECKOUT (WhatsApp + Google Sheets) ── */
+function cartCheckout(){
+  if(CART.length===0)return;
+  const grand=CART.reduce((s,o)=>s+o.total,0);
+  const dep=Math.ceil(grand*0.5);
+  const customerName=CART[0].customer;
+
+  // Build WhatsApp message
+  let lines=['🍪 *Treats by Seteisha — Order Summary*','Customer: '+customerName,''];
+  CART.forEach((item,i)=>{
+    lines.push('*Order '+(i+1)+': '+item.boxType+'*');
+    lines.push(item.detail);
+    if(item.greetingCard)lines.push('💌 Greeting Card (+$500 JMD)');
+    if(item.gift)lines.push('🎀 Message: "'+item.gift+'"');
+    lines.push('Pickup: '+(item.pickupDate||'—'));
+    lines.push('Subtotal: $'+item.total.toLocaleString()+' JMD');
+    lines.push('');
+  });
+  lines.push('*Grand Total: $'+grand.toLocaleString()+' JMD*');
+  lines.push('*Total Deposit (50%): $'+dep.toLocaleString()+' JMD*');
+  lines.push('');
+  lines.push('Transferring deposit to: FGB Mandeville · Seteisha Hall · Savings · 990848754016');
+  lines.push('\nPlease confirm all orders! 🙏');
+
+  window.open('https://wa.me/16582033013?text='+encodeURIComponent(lines.join('\n')),'_blank');
+
+  // Log to Google Sheets
+  logToSheets(customerName, grand, dep);
+
+  setTimeout(()=>{
+    g('cartPayModal').classList.add('show');
+    CART=[];renderCart();
+  },700);
+}
+
+/* ── GOOGLE SHEETS LOGGING ── */
+function logToSheets(customerName, grand, dep){
+  if(!SHEETS_URL||SHEETS_URL==='https://script.google.com/macros/s/AKfycby66PExtyERCqPwz0eDDm0N4lP-EcNmWKQVAqCDESw9gW-EWAuI9U5AScUvE2-JTYv6MA/exec')return;
+  const orders=CART.length>0?CART:[]; // snapshot before clearing
+  const payload={
+    timestamp: new Date().toLocaleString('en-JM',{timeZone:'America/Jamaica'}),
+    customer: customerName,
+    orderCount: orders.length,
+    orders: orders.map(o=>({
+      boxType:o.boxType,
+      detail:o.detail,
+      pickupDate:o.pickupDate,
+      greetingCard:o.greetingCard,
+      giftMessage:o.gift,
+      total:o.total,
+      deposit:o.deposit,
+    })),
+    grandTotal: grand,
+    totalDeposit: dep,
+  };
+  fetch(SHEETS_URL,{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload),
+  }).catch(()=>{}); // silent fail — WhatsApp is the primary confirmation
+}
+
+function closeCartPayModal(){g('cartPayModal').classList.remove('show');}
+
+/* ── SINGLE BOX PAYMENT (kept for direct checkout) ── */
 function openPay(){
   const pp=g('payPanel');pp.classList.remove('hidden');
   S.payMethod='bank';
@@ -974,13 +1244,15 @@ function openPay(){
   setTimeout(()=>pp.scrollIntoView({behavior:'smooth',block:'start'}),80);
 }
 
-function buildMsg(){
+function sendWA(){
   const bt=S.boxType;const cfg=BOX_CFG[bt];
-  const dep=Math.ceil(S.total*0.5);const gift=g('giftMsg').value.trim();
-  const lines=['🍪 *Treats by Seteisha Pre-Order*','Box: '+cfg.label];
-  if(cfg.isCrumb){
-    lines.push('Cookies: '+COOKIES.filter(c=>S.crumbQtys[c.id]>0).map(c=>c.name+' ×'+S.crumbQtys[c.id]).join(', '));
-  }else{
+  const dep=Math.ceil(S.total*0.5);
+  const custName=g('custName')?g('custName').value.trim():'Customer';
+  const gift=g('giftMsg')?g('giftMsg').value.trim():'';
+  const snap=buildSnapshot();
+  const lines=['🍪 *Treats by Seteisha Pre-Order*','Customer: '+custName,'Box: '+cfg.label];
+  if(cfg.isCrumb){lines.push('Cookies: '+COOKIES.filter(c=>S.crumbQtys[c.id]>0).map(c=>c.name+' ×'+S.crumbQtys[c.id]).join(', '));}
+  else{
     lines.push('Cookies: '+S.selectedCookies.map(id=>{const c=COOKIES.find(x=>x.id===id);if(!c)return '';const s=premiumSurcharge(c);return c.name+(s>0?' (+$'+s+' premium)':'');}).join(', '));
     lines.push('Chocolate Bars: '+S.chocoAdded.map(id=>{const ch=CHOCOLATES.find(x=>x.id===id);if(!ch)return '';const nn=ch.allergens.includes('nuts')?(S.nutsPrefs[ch.id]?' (with nuts)':' (nut-free)'):'';return ch.name+nn;}).join(', '));
     lines.push('Truffles: '+TRUFFLES.filter(t=>S.truffleQtys[t.id]>0).map(t=>t.name+(S.truffleQtys[t.id]>1?' ×'+S.truffleQtys[t.id]:'')).join(', '));
@@ -992,13 +1264,12 @@ function buildMsg(){
   if(cfg.isCrumb&&S.greetingCard)lines.push('Greeting Card: Yes (+$500 JMD)');
   if(gift)lines.push('Gift Message: "'+gift+'"');
   lines.push('\nPlease confirm my pre-order! 🙏');
-  return lines.join('\n');
-}
-
-function sendWA(){
-  window.open('https://wa.me/16582033013?text='+encodeURIComponent(buildMsg()),'_blank');
+  window.open('https://wa.me/16582033013?text='+encodeURIComponent(lines.join('\n')),'_blank');
+  // also log single order
+  logToSheets(custName,S.total,dep);
   setTimeout(()=>g('modal').classList.add('show'),700);
 }
+
 function closeModal(){g('modal').classList.remove('show');}
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
