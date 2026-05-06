@@ -378,7 +378,7 @@ footer{background:var(--brown);color:rgba(255,255,255,.55);padding:56px 48px 36p
 
 <div class="ann">
   <span class="ann-dot"></span>
-  <strong>🎉 Grand Opening & Mother's Day Edition</strong> — Only 20 Boxes Available. Pre-orders close <strong>May 3rd!</strong>
+  <strong>🎉 Grand Opening & Mother's Day Edition</strong> — Only 20 Boxes Available. Pre-orders close <strong>May 7th @ 3PM!</strong>
 </div>
 
 <nav>
@@ -578,8 +578,8 @@ footer{background:var(--brown);color:rgba(255,255,255,.55);padding:56px 48px 36p
     </div>
     <p style="font-size:13px;font-weight:600;color:var(--brown);margin-bottom:12px;">Choose your pickup date:</p>
     <div class="pickup-grid">
-      <button class="date-card" onclick="pickDate('May 7')" id="d-May7"><div class="dc-day">Wednesday, May 7th</div><div class="dc-sub">Mother's Day Eve 🌷</div></button>
-      <button class="date-card" onclick="pickDate('May 8')" id="d-May8"><div class="dc-day">Thursday, May 8th</div><div class="dc-sub">Mother's Day 💐</div></button>
+      <button class="date-card" onclick="pickDate('May 7')" id="d-May7"><div class="dc-day">Thursday, May 7th</div></button>
+      <button class="date-card" onclick="pickDate('May 8')" id="d-May8"><div class="dc-day">Friday, May 8th</div></button>
     </div>
     <div id="premNote" class="prem-note hidden">
       <strong>✨ Greeting Card included!</strong> After ordering, WhatsApp us at <strong>+1 (658) 203-3013</strong> with a photo of the recipient and the message you'd like written inside the card.
@@ -695,7 +695,7 @@ footer{background:var(--brown);color:rgba(255,255,255,.55);padding:56px 48px 36p
     </ul></div>
     <div class="ft-col"><h4>Contact</h4><ul>
       <li><a href="https://wa.me/16582033013" target="_blank">+1 (658) 203-3013</a></li>
-      <li><a href="#builder">Pre-orders close May 3rd</a></li>
+      <li><a href="#builder">Pre-orders close May 7th @ 3PM</a></li>
     </ul></div>
   </div>
   <div class="ft-btm">
@@ -762,7 +762,7 @@ let cartOpen=false;
 
 /* ── GOOGLE SHEETS ENDPOINT ── */
 // Replace this URL with your deployed Google Apps Script Web App URL
-const SHEETS_URL='https://script.google.com/macros/s/AKfycby66PExtyERCqPwz0eDDm0N4lP-EcNmWKQVAqCDESw9gW-EWAuI9U5AScUvE2-JTYv6MA/exec';
+const SHEETS_URL='YOUR_APPS_SCRIPT_URL_HERE';
 
 /* ── HELPERS ── */
 function g(id){return document.getElementById(id);}
@@ -1208,7 +1208,7 @@ function cartCheckout(){
 
 /* ── GOOGLE SHEETS LOGGING ── */
 function logToSheets(customerName, grand, dep){
-  if(!SHEETS_URL||SHEETS_URL==='https://script.google.com/macros/s/AKfycby66PExtyERCqPwz0eDDm0N4lP-EcNmWKQVAqCDESw9gW-EWAuI9U5AScUvE2-JTYv6MA/exec')return;
+  if(!SHEETS_URL||SHEETS_URL==='YOUR_APPS_SCRIPT_URL_HERE')return;
   const orders=CART.length>0?CART:[]; // snapshot before clearing
   const payload={
     timestamp: new Date().toLocaleString('en-JM',{timeZone:'America/Jamaica'}),
